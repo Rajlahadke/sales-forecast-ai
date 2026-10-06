@@ -25,135 +25,164 @@ except Exception as e:
 
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Franklin:wght@600;700&display=swap');
 
 * {
-    font-family: 'Inter', sans-serif;
+    font-family: 'DM Sans', sans-serif;
 }
 
 .stApp {
-    background:
-        radial-gradient(circle at 10% 10%, rgba(99,102,241,0.18), transparent 28%),
-        radial-gradient(circle at 90% 15%, rgba(14,165,233,0.14), transparent 25%),
-        #080b14;
-    color: #f8fafc;
+    background: #f3f0e8;
+    color: #252824;
 }
 
 .block-container {
-    max-width: 1200px;
-    padding-top: 2rem;
+    max-width: 1120px;
+    padding-top: 2.2rem;
     padding-bottom: 3rem;
 }
 
 .hero {
-    padding: 35px;
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 24px;
-    background: rgba(255,255,255,0.035);
-    margin-bottom: 25px;
+    padding: 34px 36px;
+    border: 1px solid #d8d2c6;
+    border-radius: 14px;
+    background: #faf8f3;
+    margin-bottom: 22px;
+    box-shadow: 0 6px 20px rgba(47, 45, 39, 0.05);
 }
 
 .badge {
     display: inline-block;
-    padding: 7px 13px;
-    border-radius: 999px;
-    background: rgba(99,102,241,0.14);
-    border: 1px solid rgba(129,140,248,0.25);
-    color: #a5b4fc;
-    font-size: 12px;
+    padding: 5px 0;
+    color: #8b5e3c;
+    font-size: 11px;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 1.6px;
 }
 
 .hero h1 {
-    font-size: 46px;
-    font-weight: 800;
-    margin: 15px 0 8px 0;
-    color: #ffffff;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    margin: 12px 0 8px 0;
+    color: #1f2923;
+    letter-spacing: -1.2px;
 }
 
 .hero p {
-    color: #94a3b8;
+    color: #6d7069;
     font-size: 16px;
     margin: 0;
 }
 
 .card {
-    padding: 22px;
-    border-radius: 18px;
-    border: 1px solid rgba(255,255,255,0.07);
-    background: rgba(255,255,255,0.035);
+    padding: 20px 21px;
+    border-radius: 12px;
+    border: 1px solid #ddd7cc;
+    background: #fffdf8;
+    min-height: 94px;
 }
 
 .card-title {
-    color: #94a3b8;
-    font-size: 13px;
-    margin-bottom: 7px;
+    color: #878178;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
 }
 
 .card-value {
-    color: #ffffff;
-    font-size: 23px;
-    font-weight: 700;
+    color: #2c312d;
+    font-size: 21px;
+    font-weight: 600;
 }
 
 .section-title {
-    font-size: 24px;
-    font-weight: 750;
-    margin: 25px 0 15px 0;
+    font-family: 'Libre Franklin', sans-serif;
+    color: #28332d;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 31px 0 15px 0;
 }
 
 .result-box {
     padding: 30px;
-    border-radius: 22px;
-    background: linear-gradient(
-        135deg,
-        rgba(99,102,241,0.18),
-        rgba(14,165,233,0.10)
-    );
-    border: 1px solid rgba(129,140,248,0.25);
+    border-radius: 14px;
+    background: #e6ece3;
+    border: 1px solid #cbd6c7;
     text-align: center;
-    margin-top: 25px;
+    margin-top: 24px;
 }
 
 .result-label {
-    color: #94a3b8;
-    font-size: 14px;
-    margin-bottom: 8px;
+    color: #667166;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+    margin-bottom: 7px;
 }
 
 .result-number {
-    font-size: 52px;
-    font-weight: 800;
-    color: #ffffff;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    color: #2e4a3a;
 }
 
 .result-unit {
-    color: #a5b4fc;
-    font-size: 15px;
+    color: #68766d;
+    font-size: 14px;
 }
 
 div[data-testid="stButton"] button {
     width: 100%;
-    border-radius: 12px;
+    border-radius: 9px;
     height: 48px;
+    background: #314c3f;
+    color: #fffdf8;
+    border: 1px solid #314c3f;
     font-weight: 700;
 }
 
+div[data-testid="stButton"] button:hover {
+    background: #263d33;
+    color: #ffffff;
+    border-color: #263d33;
+}
+
 div[data-testid="stMetric"] {
-    background: rgba(255,255,255,0.035);
-    border: 1px solid rgba(255,255,255,0.07);
+    background: #fffdf8;
+    border: 1px solid #ddd7cc;
     padding: 18px;
-    border-radius: 16px;
+    border-radius: 12px;
+}
+
+div[data-testid="stMetric"] label,
+div[data-testid="stMetric"] [data-testid="stMetricValue"] {
+    color: #2f342f;
+}
+
+div[data-baseweb="input"] > div,
+div[data-baseweb="select"] > div {
+    background: #fffdf8;
+    border-color: #d7d1c6;
+}
+
+hr {
+    border-color: #d8d2c6 !important;
+}
+
+[data-testid="stCaptionContainer"] {
+    color: #7a776f;
 }
 </style>
 """, unsafe_allow_html=True)
 
 st.markdown("""
 <div class="hero">
-    <span class="badge">MACHINE LEARNING • SALES ANALYTICS</span>
-    <h1>📈 Sales Forecast AI</h1>
-    <p>Predict expected product demand using a trained regression model.</p>
+    <span class="badge">SALES FORECASTING</span>
+    <h1>Sales Forecast</h1>
+    <p>Estimate product demand from sales, pricing and customer inputs.</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -163,7 +192,7 @@ with c1:
     st.markdown("""
     <div class="card">
         <div class="card-title">MODEL</div>
-        <div class="card-value">ML Powered</div>
+        <div class="card-value">Regression Model</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -179,12 +208,12 @@ with c3:
     st.markdown("""
     <div class="card">
         <div class="card-title">FORECAST TYPE</div>
-        <div class="card-value">Sales Demand</div>
+        <div class="card-value">Demand Forecast</div>
     </div>
     """, unsafe_allow_html=True)
 
 st.markdown(
-    '<div class="section-title">📊 Enter Sales Details</div>',
+    '<div class="section-title">Enter sales details</div>',
     unsafe_allow_html=True
 )
 
@@ -277,7 +306,7 @@ with col2:
 
 st.markdown("")
 
-if st.button("🔮 Predict Sales Demand"):
+if st.button("Predict demand"):
 
     if sales_amount < 0:
         st.error("Sales Amount cannot be negative.")
@@ -348,7 +377,7 @@ if st.button("🔮 Predict Sales Demand"):
         st.markdown(f"""
         <div class="result-box">
             <div class="result-label">
-                PREDICTED SALES QUANTITY
+                FORECASTED QUANTITY
             </div>
             <div class="result-number">
                 {prediction:.2f}
@@ -360,11 +389,11 @@ if st.button("🔮 Predict Sales Demand"):
         """, unsafe_allow_html=True)
 
         if prediction < 20:
-            st.info("📦 Low expected demand")
+            st.info("Low expected demand")
         elif prediction < 50:
-            st.success("📊 Moderate expected demand")
+            st.success("Moderate expected demand")
         else:
-            st.success("🔥 High expected demand")
+            st.success("High expected demand")
 
     except Exception as e:
 
@@ -374,7 +403,7 @@ if st.button("🔮 Predict Sales Demand"):
 st.markdown("---")
 
 st.markdown(
-    '<div class="section-title">🤖 Model Information</div>',
+    '<div class="section-title">Model details</div>',
     unsafe_allow_html=True
 )
 
