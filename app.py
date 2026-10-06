@@ -1,5 +1,3 @@
-import bz2
-
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -12,12 +10,11 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-MODEL_FILE = "best_sales_forecast_model.pkl.bz2"
+MODEL_FILE = "best_sales_forecast_model.pkl"
 
 @st.cache_resource
 def load_model():
-    with bz2.open(MODEL_FILE, "rb") as model_file:
-        return joblib.load(model_file)
+    return joblib.load(MODEL_FILE)
 
 try:
     model = load_model()
